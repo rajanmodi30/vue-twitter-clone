@@ -8,7 +8,7 @@
       </div>
     </div>
   </div>
-  <br>
+  <br />
 </template>
 <script>
 export default {
