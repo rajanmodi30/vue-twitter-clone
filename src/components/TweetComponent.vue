@@ -7,14 +7,27 @@
         <p class="text-lg text-black font-semibold">{{ tweet.content }}</p>
       </div>
     </div>
+    <button
+      class="transition duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110 px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+      @click="favorite(tweet.id)"
+    >
+      Favorite
+    </button>
   </div>
   <br />
 </template>
 <script>
 export default {
   name: "TweetComponent",
+  emits: ["favorite"],
+
   props: {
     tweet: Object,
+  },
+  methods: {
+    favorite(id) {
+      this.$emit("favorite", id);
+    },
   },
 };
 </script>
